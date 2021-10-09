@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="components/components.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="chatwindow">
+            <div class="msg-from msg">
+                <p class="msg-text">Description: Chatbot for info about covid 19.
+
+                    Scenario - When user types in custom question
+                    1. User types in message in input box
+                    2. Append message bubble to chat interface via javascript 
+                    3. Send request to server via ajax (request sent to controller - Harikeshav)
+                    4. Receive confirmation from server as json object - if success send '1' else return '0' 
+                    5. Display confirmation - success/failure (checkmark/exclamation on chat bubble)
+                    6. Receive query details from server. Return answer to question. (e.g. if the message is irrelevant, return error message)
+                    7. Append chatbot respond to chat interface
+                    8. Prompt user for feedback on answer ('Did this answer satisfy you? - Type y/N')
+                    
+                    
+                    Preloaded questions -
+                    1. Chatbot prompts user with 6 preloaded questions when opened. (Akshat to prepare questions and responses)
+                    2. User types question number 
+                    3. Server to respond with answer</p>
+            </div>
+            <div class="msg-snd-cnt">
+                <input class="msg-snd" type="text" placeholder="Type a message">
+            </div>
+        </div>
+    </body>
+</html>
