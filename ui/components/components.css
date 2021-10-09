@@ -60,7 +60,7 @@ body {
 	line-height: 1.25em;
     transition: 0.1s all ease;
     position: absolute;
-    bottom: 50;
+    bottom: 50px;
 }
 .msg-snd:hover {
 	border: 2.4px solid var(--blue-def);
@@ -78,7 +78,7 @@ body {
     z-index: 10;
     width: 48rem;
     height: 5rem;
-    transform: translateX(-50%);
+    transform: translateX(-52%);
 }
 .btn-send {
     padding: 10px 25px;
