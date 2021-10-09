@@ -61,3 +61,8 @@ rules:
   steps:
   - intent: mitigation
   - action: utter_mitigation
+
+- rule: masks
+  steps:
+  - intent: masks
+  - action: action_show_masks

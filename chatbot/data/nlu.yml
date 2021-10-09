@@ -148,3 +148,15 @@ nlu:
   examples: |
     - what is community mitigation?
     - community mitigation?
+
+- intent: masks
+  examples: |
+    - get me good mask deals
+    - good mask deals
+    - masks
+    - face masks
+    - get me good face mask deals
+    - i need face masks
+    - i need mask
+    - i want face mask
+    - i want mask
