@@ -41,6 +41,8 @@ intents:
     use_entities: true
 - masks:
     use_entities: true
+- sanitizers:
+    use_entities: true
 entities: []
 slots: {}
 responses:
@@ -96,5 +98,6 @@ actions:
   - utter_contact_tracing
   - utter_mitigation
   - action_show_masks
+  - action_show_sanitizers
 forms: {}
 e2e_actions: []

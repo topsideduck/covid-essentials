@@ -66,3 +66,8 @@ rules:
   steps:
   - intent: masks
   - action: action_show_masks
+
+- rule: sanitizers
+  steps:
+  - intent: sanitizers
+  - action: action_show_sanitizers

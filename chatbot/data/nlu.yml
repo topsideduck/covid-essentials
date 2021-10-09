@@ -160,3 +160,15 @@ nlu:
     - i need mask
     - i want face mask
     - i want mask
+
+- intent: sanitizers
+  examples: |
+    - get me good sanitizer deals
+    - good sanitizer deals
+    - sanitizers
+    - hand sanitizers
+    - get me good hand sanitizers deals
+    - i need hand sanitizers
+    - i need sanitizer
+    - i want hand sanitizers
+    - i want sanitizer
