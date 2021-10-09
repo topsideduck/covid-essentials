@@ -1,0 +1,113 @@
+:root {
+    --color-def: #ffffff; 
+    --bg-def: #ffffff;
+    --msg-min-w: 8rem; 
+    --msg-min-h: 3rem;
+    --msg-max-w: 20rem;
+    --blue-def: #5276b7;
+    --dark-blue-def: #2D579E;
+}
+body {
+	font-family: 'Inter';
+    background: var(--bg-def);
+    color: black;
+}
+.msg {
+	min-width: var(--msg-min-w);
+    min-height: var(--msg-min-h);
+    
+    display: inline-block;
+    color: var(--color-def);
+    margin: auto;
+    box-sizing: content-box;
+    cursor: default;
+    width: 70%;
+    margin-bottom: 0.5rem;
+}
+.msg-text {
+	margin-left: 8px;
+    margin-right: 1rem;
+    overflow-wrap: break-word;
+    text-align: left;
+    font-size: 14px;
+}
+.msg-to {
+	background: var(--blue-def);
+    float: right;
+    border-radius: 15px 15px 4px 15px;
+    margin: 8px 0 10px;
+}
+.msg-from {
+	background: #a9a9a9;
+    float: left;
+    border-radius: 4px 15px 15px 15px;
+    margin: 8px 0 10px;
+}
+::selection{
+	background: #83a6c9;
+}
+.msg-snd {
+	width: 100%;
+	color: #2c2c2c;
+	background: rgba(250, 250, 250, 0.95);
+	font-size: 1em;
+	letter-spacing: .5px;
+	font-weight: 400;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+    padding: 10px 15px;
+	outline: none;
+	line-height: 1.25em;
+    transition: 0.1s all ease;
+    position: absolute;
+    bottom: 50;
+}
+.msg-snd:hover {
+	border: 2.4px solid var(--blue-def);
+    padding: 8.4px 13.4px;
+}
+.msg-snd:focus {
+	border: 2.4px solid var(--blue-def);
+    padding: 8.4px 13.4px;
+    box-shadow: 0 0 0 2.4px #b3c0da;
+}
+.msg-snd-cnt {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 10;
+    width: 48rem;
+    height: 5rem;
+    transform: translateX(-50%);
+}
+.btn-send {
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+    background: var(--blue-def);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    transition: 0.1s all ease;
+}
+.btn-send:hover {
+    background: var(--dark-blue-def);
+}
+.btn-send:focus {
+    background: var(--dark-blue-def);
+    border: 2px solid var(--bg-def); 
+    box-shadow: 0 0 0 1.4px var(--dark-blue-def);
+}
+.chatwindow {
+    width: 48rem;
+    height: 75vh;
+    padding: 2.5rem;
+    padding-bottom: 6.5rem;
+    overflow: hidden;
+    overflow-y: auto;
+    align-self: flex-end;
+    background: #eee;
+    border-radius: 10px;
+    margin: auto; 
+    overflow: none;
+}
