@@ -90,3 +90,61 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: basics
+  examples: |
+    - what is covid?
+    - what is covid 19?
+    - what is covid-19?
+    - what is coronavirus?
+    - what is corona?
+    - what is this virus?
+
+- intent: spread
+  examples: |
+    - how does the virus spread?
+    - what is community spread?
+
+- intent: prevention
+  examples: |
+    - how can i protect myself?
+    - how do prevent infection?
+    - how to prevent further spread?
+
+- intent: infected
+  examples: |
+    - what should i do if someone in my house gets sick?
+    - what should i do if someone i know gets sick?
+    - what should i do if a family member gets sick?
+
+- intent: recommendations
+  examples: |
+    - what are the recommendations for infected person?
+    - what are the recommendations for someone who has symptoms?
+
+- intent: children
+  examples: |
+    - what is the risk of my child getting infected?
+    - what is the risk of my child becoming sick?
+
+- intent: mis
+  examples: |
+    - what is MIS in children?
+    - what is multisystem inflammatory syndrome in children?
+
+- intent: symptoms
+  examples: |
+    - what are the symptoms of covid?
+    - what are the symptoms of covid-19?
+    - what are the symptoms of coronavirus?
+    - what are the symptoms of corona?
+
+- intent: contact_tracing
+  examples: |
+    - what is contact tracing?
+    - contact tracing?
+
+- intent: mitigation
+  examples: |
+    - what is community mitigation?
+    - community mitigation?
