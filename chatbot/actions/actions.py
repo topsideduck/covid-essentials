@@ -15,6 +15,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from bs4 import BeautifulSoup
 import requests
 
+import newspaper
 
 class ActionHelloWorld(Action):
 
@@ -38,60 +39,6 @@ class ActionShowMasks(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        def get_title(soup):
-            try:
-                title = soup.find("span", attrs={"id": 'productTitle'})
-                title_value = title.string
-                title_string = title_value.strip()
-
-            except AttributeError:
-                title_string = ""
-
-            return title_string
-
-        def get_price(soup):
-            try:
-                price = soup.find("span", attrs={'id': 'priceblock_ourprice'}).string.strip()
-
-            except AttributeError:
-                try:
-                    price = soup.find("span", attrs={'id': 'priceblock_dealprice'}).string.strip()
-
-                except:
-                    price = ""
-
-            return price
-
-        def get_rating(soup):
-            try:
-                rating = soup.find("i", attrs={'class': 'a-icon a-icon-star a-star-4-5'}).string.strip()
-            except AttributeError:
-                try:
-                    rating = soup.find("span", attrs={'class': 'a-icon-alt'}).string.strip()
-                except:
-                    rating = ""
-
-            return rating
-
-        def get_review_count(soup):
-            try:
-                review_count = soup.find("span", attrs={'id': 'acrCustomerReviewText'}).string.strip()
-
-            except AttributeError:
-                review_count = ""
-
-            return review_count
-
-        def get_availability(soup):
-            try:
-                available = soup.find("div", attrs={'id': 'availability'})
-                available = available.find("span").string.strip()
-
-            except AttributeError:
-                available = "Not Available"
-
-            return available
-
         HEADERS = ({'User-Agent':
                         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
                     'Accept-Language': 'en-US'})
@@ -114,5 +61,19 @@ class ActionShowMasks(Action):
             i += 1
             if i == 5:
                 break
+
+        return []
+
+class ActionCovidNews(Action):
+
+    def name(self) -> Text:
+        return "action_covid_news"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+
+        #dispatcher.utter_message(text="Hello World!")
 
         return []
