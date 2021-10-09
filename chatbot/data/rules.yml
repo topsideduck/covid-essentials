@@ -11,3 +11,53 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: basics
+  steps:
+  - intent: basics
+  - action: utter_basics
+
+- rule: spread
+  steps:
+  - intent: spread
+  - action: utter_spread
+
+- rule: prevention
+  steps:
+  - intent: prevention
+  - action: utter_prevention
+
+- rule: infected
+  steps:
+  - intent: infected
+  - action: utter_infected
+
+- rule: recommendations
+  steps:
+  - intent: recommendations
+  - action: utter_recommendations
+
+- rule: children
+  steps:
+  - intent: children
+  - action: utter_children
+
+- rule: mis
+  steps:
+  - intent: mis
+  - action: utter_mis
+
+- rule: symptoms
+  steps:
+  - intent: symptoms
+  - action: utter_symptoms
+
+- rule: contact_tracing
+  steps:
+  - intent: contact_tracing
+  - action: utter_contact_tracing
+
+- rule: mitigation
+  steps:
+  - intent: mitigation
+  - action: utter_mitigation

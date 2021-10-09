@@ -19,21 +19,25 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-- recommendations:
+- basics:
     use_entities: true
 - spread:
     use_entities: true
-- basics:
-    use_entities: true
 - prevention:
-    use_entities: true
-- symptoms:
-    use_entities: true
-- mis:
     use_entities: true
 - infected:
     use_entities: true
+- recommendations:
+    use_entities: true
 - children:
+    use_entities: true
+- mis:
+    use_entities: true
+- symptoms:
+    use_entities: true
+- contact_tracing:
+    use_entities: true
+- mitigation:
     use_entities: true
 entities: []
 slots: {}
@@ -50,7 +54,44 @@ responses:
   utter_goodbye:
   - text: Bye
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
-actions: []
+  - text: I am a bot, made by Harikeshav.
+  utter_basics:
+  - text: COVID-19 is a disease caused by a virus called SARS-CoV-2. Most people with COVID-19 have mild symptoms, but some people can become severely ill. Although most people with COVID-19 get better within weeks of illness, some people experience post-COVID conditions. Post-COVID conditions are a wide range of new, returning, or ongoing health problems people can experience more than four weeks after first being infected with the virus that causes COVID-19. Older people and those who have certain underlying medical conditions are more likely to get severely ill from COVID-19. Vaccines against COVID-19 are safe and effective.
+  utter_spread:
+  - text: COVID-19 spreads when an infected person breathes out droplets and very small particles that contain the virus. These droplets and particles can be breathed in by other people or land on their eyes, noses, or mouth. In some circumstances, they may contaminate surfaces they touch. People who are closer than 6 feet from the infected person are most likely to get infected.
+  utter_prevention:
+  - text: Get Vaccinated, wear a mask, stay 6 feet away from others, avoid crowds and poorly ventilated spaces, wash your hands often, cover coughs and sneezes, clean and disinfect and monitor your health daily.
+  utter_infected:
+  - text: People who have been in close contact with someone who has COVID-19—excluding people who have had COVID-19 within the past 3 months or who are fully vaccinated:\n - People who have tested positive for COVID-19 within the past 3 months and recovered do not have to quarantine or get tested again as long as they do not develop new symptoms.\n - People who develop symptoms again within 3 months of their first bout of COVID-19 may need to be tested again if there is no other cause identified for their symptoms.\n - People who have been in close contact with someone who has COVID-19 are not required to quarantine if they have been fully vaccinated against the disease and show no symptoms.
+  utter_recommendations:
+  - text: If you are sick with COVID-19 or think you might have COVID-19, follow the steps below to care for yourself and to help protect other people in your home and community:\n - Stay at home (except to get medical care).\n - Separate yourself from others.\n - Monitor your symptoms.\n - Wear a mask over your nose and mouth when around others.\n - Cover your coughs and sneezes.\n - Wash your hands often.\n - Clean high-touch surfaces every day.\n - Avoid sharing personal household items.
+  utter_children:
+  - text: Children can be infected with the virus that causes COVID-19 and can get sick with COVID-19. Most children with COVID-19 have mild symptoms or they may have no symptoms at all (“asymptomatic”). Fewer children have been sick with COVID-19 compared to adults. Babies younger than 1 and children with certain underlying medical conditions may be more likely to have serious illness from COVID-19.
+  utter_mis:
+  - text: Multisystem inflammatory syndrome in children (MIS-C) is a serious condition associated with COVID-19 where different body parts can become inflamed, including the heart, lungs, kidneys, brain, skin, eyes, or gastrointestinal organs.
+  utter_symptoms:
+  - text: People with COVID-19 have reported a wide range of symptoms – from mild symptoms to severe illness. Symptoms may appear 2-14 days after exposure to the virus. If you have fever, cough, or similar symptoms, you might have COVID-19.
+  utter_contact_tracing:
+  - text: Contact tracing has been used for decades by state and local health departments to slow or stop the spread of infectious diseases. Contact tracing slows the spread of COVID-19 by:\n - Letting people know they may have been exposed to COVID-19 and should monitor their health for signs and symptoms of COVID-19.\n - Helping people who may have been exposed to COVID-19 get tested.\n - Asking people to self-isolate if they have COVID-19 or self-quarantine if they are a close contact of someone with COVID-19.
+  utter_mitigation:
+  - text: Community mitigation is a set of actions that people and communities can take to slow the spread of infectious diseases like COVID-19. The goal of community mitigation in areas with local COVID-19 transmission is to slow its spread and to protect all individuals, especially those at increased risk for severe illness, while minimizing the negative impacts of these strategies.
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_basics
+  - utter_spread
+  - utter_prevention
+  - utter_infected
+  - utter_recommendations
+  - utter_children
+  - utter_mis
+  - utter_symptoms
+  - utter_contact_tracing
+  - utter_mitigation
 forms: {}
 e2e_actions: []
