@@ -20,7 +20,7 @@ from urllib.request import urlopen
 class ActionCovidCenters(Action):
 
     def name(self) -> Text:
-        return "action_covid_centers"
+        return "action_covid_centres"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

@@ -40,6 +40,27 @@
     <title>CovidInIndia</title>
   </head>
   <body onload="getdata()">
+  	<script>!(function () {
+        let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+                initPayload: '/welcome',
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                title: 'Rasa the COVID chatbot',
+                subtitle: 'Built by school students, powered by AI'
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+        })();
+	</script>
     <header class="header">
       <a href="#">
         <img class="logo" alt="CovidIndia logo" src="img/covfakelogo.png" />
@@ -65,16 +86,6 @@
                 The cases shall reveal all this.
                 </p>
                 <a href="#how" class="btn btn--outline">Learn more &darr;</a>
-
-                <div class="intro-img-box">
-                  <picture>
-                    <source srcset="img/covgraph.png" type="image/png" />
-                    <source srcset="img/covdeaths.jpg" type="image/jpg" />
-                    <img src="img/covdeaths.jpg"
-                    class="intro-img"
-                    alt="Covid related deaths, Number of covid cases" />
-                  </picture>
-                </div>
               </div>
             </section>
 
@@ -87,7 +98,7 @@
                 </h2>
             </div>
               </section>
-							
+
               <br>
               <section class="section-active" id="active">
                   <div class="container center-text">
@@ -699,6 +710,8 @@
        </tr>
 			 </tbody>
    </table>
+	 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	 <p>If cell is blank, then no data was available for that particular cell.</p>
                   <!-- you guys will have to add in the active cases in each state. Akshat just copy what I did above and add it to each state -->
 	</div>
   </body>
