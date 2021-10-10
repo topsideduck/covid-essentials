@@ -20,7 +20,8 @@
       <link rel="stylesheet" href="css/general.css" />
       <link rel="stylesheet" href="css/style.css" />
       <link rel="stylesheet" href="css/queries.css" />
-
+			<script defer src ="js/data.js">
+			</script>
       <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
@@ -38,7 +39,7 @@
 
     <title>CovidInIndia</title>
   </head>
-  <body>
+  <body onload="getdata()">
     <header class="header">
       <a href="#">
         <img class="logo" alt="CovidIndia logo" src="img/covfakelogo.png" />
@@ -93,110 +94,619 @@
                   Confirmed Cases In India Currently
                 </h2>
             </div>
-
-            <div class="container grid grid--2-cols grid--center-v">
-              <div class="step-text-box">
-                <p class="step-total">Total Number Of Confirmed Cases In India Currently</p>
-                <br><h3 class="heading-tertiary">
-                  Total - <!-- you guys will have to add this in -->
-                </h3>
-                <p class="step-description">
-                  These are the total number of cases in India Currently
-                  India still seems to be having lots of difficulty during this time.
-                  A lot of things are still in need of fixing anf change to help speed up the process of freeing the country from covid!
-                </p>
-              </div>
               </section>
 
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <br>
               <section class="section-active" id="active">
                   <div class="container center-text">
-                    &nbsp; <span class="subheading">Active Cases</span>
-                      <h2 class="heading-secondary">
-                       Current number of active cases in India
-                      </h2>
-                      <h3 class="heading-tertiary">
-                        Total - <!-- you guys will have to add this in -->
-                      </h3>
-                      <h4 class="heading-quad"><!-- arnav/adit/hari will have to link the data from wherever we are getting for each state to here,so that it updates automatically--><br>
-                        Andaman and Nicobar Islands -
-                        Andhra Pradesh -              <br>
-                        Arunachal Pradesh -            <br>
-                        Assam -        <br>                
-                        Bihar - <br>
-                        Chandigarh - <br>
-                        Chhattisgarh -<br>
-                        Dadra & Nagar Haveli and Daman & Diu -<br>
-                        Delhi -<br>
-                        Goa -<br>
-                        Gujarat -<br>
-                        Haryana -<br>
-                        Himachal Pradesh -<br>
-                        Jammu and Kashmir -<br>
-                        Jharkhand -<br>
-                        Karnataka - <br>
-                        Kerala -<br>
-                        Ladakh -<br>
-                        Lakshadweep -<br>
-                        Madhya Pradesh -<br>
-                        Maharashtra -<br>
-                        Manipur -<br>
-                        Meghalaya -<br>
-                        Mizoram -<br>
-                        Nagaland -<br>
-                        Odisha -<br>
-                        Puducherry -<br>
-                        Punjab -<br>
-                        Rajasthan -<br>
-                        Sikkim -<br>
-                        Tamil Nadu -<br>
-                        Telangana -<br>
-                        Tripura -<br>
-                        Uttar Pradesh -<br>
-                        Uttarakhand - <br>
-                        West Bengal -<br>
-                      
-                      </h4>
-                  </div>
-                  </section>
-
-
-                  <!-- you guys will have to add in the active cases in each state. Akshat just copy what I did above and add it to each state -->
-
-                  <section class="section-recovered" id="recovered">
-                    <div class="recovered-container">
-                    <span class="subheading">Recovered</span>
-                    <h2 class="heading-secondary">The number of people who have recovered</h2>
-                    <h3 class="heading-tertiary">
-                      India has seen some good recovery! It seems as though the number of cases  are going down and a lot of people are recovering.<!-- you guys will have to add this in and also add some image of the amount of recoveries in the country-->
-                    </h3>
-                    </div>
-                    </section>
-
-                    <section class="section-state" id="state">
-                        <div class="container">
-                        <span class="subheading">State</span>
-                        <h2 class="heading-secondary">
-                          Search your state for covid
-                        </h2>
-                      </div>
-                      <div class="premain">
-                        <input type="text" name="box" placeholder="Search Your State..
-                        " >
-                        <div class="btn1">
-                          <a href="#"></a>
-                        </div>
-                      </div>
-
-                      <br><br><div class="zoom_outer">
-                        <div class="zoom" id="zoom">
-                          <center><img src="img/covtestmap.png" class="zoom-img" alt="map"></center>
-                        </div>
-                      </div>
-
-                      
-
-
-
+										<table>
+     <thead>
+       <tr>
+         <th rowspan="2">STATE/UT</th>
+         <th colspan="2">Confirmed</th>
+         <th colspan="2">Recovered</th>
+         <th colspan="2">Deceased</th>
+				 <th colspan="2">Tested</th>
+				 <th colspan="2">Vaccinated(1 dose)</th>
+				 <th colspan="2">Vaccinated(2 dose)</th>
+       </tr>
+			 <tr>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+					<td>
+						Today
+					</td>
+					<td>
+							Total
+					</td>
+			 </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <th scope="row">Total India</th>
+         <td id="TTdelta7confirmed"></td>
+         <td id="TTtotalconfirmed">0</td>
+         <td id="TTdelta7recovered">0</td>
+         <td id="TTtotalrecovered">0</td>
+				 <td id="TTdelta7deceased">0</td>
+				 <td id="TTtotaldeceased">0</td>
+				 <td id="TTdelta7tested">0</td>
+				 <td id="TTtotaltested">0</td>
+				 <td id="TTdelta7vaccinated1">0</td>
+				 <td id="TTtotalvaccinated1">0</td>
+				 <td id="TTdelta7vaccinated2">0</td>
+				 <td id="TTtotalvaccinated2">0</td>
+       </tr>
+			 <tr>
+         <th scope="row">Adman & Nicobar Island</th>
+         <td id="ANdelta7confirmed"></td>
+         <td id="ANtotalconfirmed">0</td>
+         <td id="ANdelta7recovered">0</td>
+         <td id="ANtotalrecovered">0</td>
+				 <td id="ANdelta7deceased">0</td>
+				 <td id="ANtotaldeceased">0</td>
+				 <td id="ANdelta7tested">0</td>
+				 <td id="ANtotaltested">0</td>
+				 <td id="ANdelta7vaccinated1">0</td>
+				 <td id="ANtotalvaccinated1">0</td>
+				 <td id="ANdelta7vaccinated2">0</td>
+				 <td id="ANtotalvaccinated2">0</td>
+       </tr>
+			 <tr>
+         <th scope="row">Andhra Pradesh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Arunachal Pradesh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Assam</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Bihar</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Chandigarh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Chhatisgarh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Delhi</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Dadra and Nagar Haveli</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Goa</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Gujurat</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Himachal Pradesh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Haryana</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Jharkhand</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Jammu and Kashmir</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Karnataka</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Kerela</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Ladakh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Lakshadweep</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Maharashtra</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Meghalaya</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Manipur</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Madhya Pradesh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Mizoram</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Nagaland</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Orissa</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Punjab</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Pondicherry</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Rajasthan</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Sikkim</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Telangana</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Tamil Nadu</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Tripura</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Uttar Pradesh</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">Uttarakhand</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 <tr>
+         <th scope="row">West Bengal</th>
+         <td>10</td>
+         <td>7632</td>
+         <td>8</td>
+         <td>7492</td>
+				 <td>0</td>
+				 <td>129</td>
+				 <td>9787</td>
+				 <td>565922</td>
+				 <td>1240</td>
+				 <td>291239</td>
+				 <td>10724</td>
+				 <td>165062</td>
+       </tr>
+			 </tbody>
+   </table>
+	</div>
   </body>
 </html>
