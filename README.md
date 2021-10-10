@@ -1,4 +1,4 @@
-# covid-essentials
+# COVID Essentials
  
 ## Inspiration: 
 With the pandemic rampaging the world, we wanted to make it easier for us Indians to navigate through statistics and news for Covid 19. 
