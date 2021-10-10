@@ -2,7 +2,7 @@ version: '2.0'
 config:
   store_entities_as_slots: true
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 1
   carry_over_slots_to_new_session: true
 intents:
 - welcome
@@ -26,7 +26,7 @@ intents:
 - mitigation
 - covid_data
 - covid_news
-- covid_centers
+- covid_centres
 - masks_bad
 - masks_distancing
 - antibiotics
@@ -103,6 +103,6 @@ actions:
   - utter_antibiotics
   - action_covid_data
   - action_covid_news
-  - action_covid_centers
+  - action_covid_centres
 forms: {}
 e2e_actions: []

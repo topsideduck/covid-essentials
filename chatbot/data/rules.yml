@@ -82,10 +82,10 @@ rules:
   - intent: covid_news
   - action: action_covid_news
 
-- rule: covid_centers
+- rule: covid_centres
   steps:
-  - intent: covid_centers
-  - action: action_covid_centers
+  - intent: covid_centres
+  - action: action_covid_centres
 
 - rule: masks_bad
   steps:
