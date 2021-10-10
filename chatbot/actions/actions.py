@@ -42,7 +42,7 @@ class ActionCovidCenters(Action):
             if center == "center_data":
                 for data in details:
                     text += "Center ID: {0}\n".format(data["center_id"])
-                    text += "Name of center;{0}\n".format(data["name"])
+                    text += "Name of center: {0}\n".format(data["name"])
                     text += "Address: {0}\n".format(data["address"])
                     text += "Minimum age limit: {0}\n".format(data["min_age_limit"])
                     text += "Next available day: {0}\n".format(data["next_available_day"])
@@ -50,7 +50,7 @@ class ActionCovidCenters(Action):
                     text += "Available dose 1 capacity: {0}\n".format(data["available_capacity_dose1"])
                     text += "Available dose 2 capacity: {0}\n".format(data["available_capacity_dose2"])
                     text += "Vaccine name: {0}\n".format(data["vaccine_name"])
-                    text += "Directions: https://www.google.com/maps/search/{0}\n".format(str(data["name"]).replace(" ", "+"))
+                    text += "Directions: https://www.google.com/maps/search/{0}\n \n".format(str(data["name"]).replace(" ", "+"))
 
                     dispatcher.utter_message(text=text)
                     text = ""

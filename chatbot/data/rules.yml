@@ -76,3 +76,18 @@ rules:
   steps:
   - intent: covid_centers
   - action: action_covid_centers
+
+- rule: masks_bad
+  steps:
+  - intent: masks_bad
+  - action: utter_masks_bad
+
+- rule: masks_distancing
+  steps:
+  - intent: masks_distancing
+  - action: utter_masks_distancing
+
+- rule: antibiotics
+  steps:
+  - intent: antibiotics
+  - action: utter_antibiotics

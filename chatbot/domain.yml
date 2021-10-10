@@ -25,6 +25,9 @@ intents:
 - covid_data
 - covid_news
 - covid_centers
+- masks_bad
+- masks_distancing
+- antibiotics
 entities:
   - place
   - pincode
@@ -63,6 +66,12 @@ responses:
   - text: Contact tracing has been used for decades by state and local health departments to slow or stop the spread of infectious diseases. Contact tracing slows the spread of COVID-19 by:\n\ - Letting people know they may have been exposed to COVID-19 and should monitor their health for signs and symptoms of COVID-19.\n\ - Helping people who may have been exposed to COVID-19 get tested.\n\ - Asking people to self-isolate if they have COVID-19 or self-quarantine if they are a close contact of someone with COVID-19.
   utter_mitigation:
   - text: Community mitigation is a set of actions that people and communities can take to slow the spread of infectious diseases like COVID-19. The goal of community mitigation in areas with local COVID-19 transmission is to slow its spread and to protect all individuals, especially those at increased risk for severe illness, while minimizing the negative impacts of these strategies.
+  utter_masks_bad:
+  - text: Simple answer is no. A molecule of carbon dioxide is about 0.00033 microns wide, and oxygen is about the same—almost a thousand times smaller. No molecule that small will get trapped in a mask. To help us picture the difference, let’s estimate that the period(full stop) you see at the end of this sentence is about 1 millimeter wide. If we pretend that the period represents a molecule of oxygen or carbon dioxide, then the virus would be about the size of a meter (100cm). Therefore a mask doesn't cause the accumulation of CO2 and it also does not inhibit the inhalation of oxygen.
+  utter_masks_distancing:
+  - text: It depends. There are multiple factors that determine the infection risk of any given situation - indoors vs. outdoors, distance from others, how long you interact with someone, and the likelihood of droplet spray. You could be standing more than 6 feet from someone, but if you’re talking for a while and speaking loudly to be heard, wearing a mask would still be a good idea. On the other hand, if you’re outside and no one else is nearby, you don’t need a mask. Still, it’s a good idea to have a mask ready in case someone comes by; the simple action of wearing a mask helps everyone feel like we are taking care of each other. As wearing a mask not only protects you, it also protects others.
+  utter_antibiotics:
+  - text: Antibiotics do not work against viruses; they only work on bacterial infections. COVID-19 is caused by a virus, so antibiotics do not work. Antibiotics should not be used as a means of prevention or treatment of COVID-19. In hospitals, physicians will sometimes use antibiotics to prevent or treat secondary bacterial infections which can be a complication of COVID-19 in severely ill patients. They should only be used as directed by a physician to treat a bacterial infection.
 
 actions:
   - utter_greet
@@ -81,6 +90,9 @@ actions:
   - utter_symptoms
   - utter_contact_tracing
   - utter_mitigation
+  - utter_masks_bad
+  - utter_masks_distancing
+  - utter_antibiotics
   - action_covid_data
   - action_covid_news
   - action_covid_centers

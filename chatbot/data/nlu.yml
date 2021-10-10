@@ -227,3 +227,27 @@ nlu:
     - 700004
     - 899002
     - 950045
+
+- intent: masks_bad
+  examples: |
+    - do masks make it harder to breath?
+    - are masks bad for health?
+    - do masks effect us?
+    - are masks bad?
+    - are face masks bad?
+
+- intent: masks_distancing
+  examples: |
+    - do i need to wear a mask if im also distancing?
+    - is wearing a mask compulsory while distancing?
+    - should we wear a mask while socially distancing?
+    - should i wear mask while distancing?
+    - can i wear mask while socially distancing?
+
+- intent: antibiotics
+  examples: |
+    - are antibiotics effective in preventing or treating covid-19?
+    - do antibiotics work against covid?
+    - can antibiotics kill corona?
+    - can i use antibiotics against corona?
+    - how to use antibiotics against covid?
