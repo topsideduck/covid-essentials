@@ -71,3 +71,8 @@ rules:
   steps:
   - intent: covid_news
   - action: action_covid_news
+
+- rule: covid_centers
+  steps:
+  - intent: covid_centers
+  - action: action_covid_centers

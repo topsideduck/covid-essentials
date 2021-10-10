@@ -207,3 +207,23 @@ nlu:
     - india corona news
     - covid news
     - news covid-19
+
+- intent: covid_centers
+  examples: |
+    - covid vaccination centers near [560093](pincode)
+    - vaccine centers in [110004](pincode)
+    - vaccination centers in [400011](pincode)
+    - where to get vaccine near [700012](pincode)
+    - get me covid vaccine centers in [600009](pincode)
+
+- lookup: pincode
+  examples: |
+    - 110001
+    - 230003
+    - 330064
+    - 460093
+    - 560075
+    - 660019
+    - 700004
+    - 899002
+    - 950045

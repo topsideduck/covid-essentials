@@ -18,6 +18,46 @@ import ssl
 from urllib.request import urlopen
 
 
+class ActionCovidCenters(Action):
+
+    def name(self) -> Text:
+        return "action_covid_centers"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        pincode = next(tracker.get_latest_entity_values("pincode"), None)
+
+        url = "https://api.mygov.in/get-vaccination-center/?api_key=57076294a5e2ab7fe0000001dd278c47e313412c7de416e536f1992f&pincode=" + pincode
+
+        ssl_context = ssl._create_unverified_context()
+        response = urlopen(url, context=ssl_context)
+
+        data = json.loads(response.read())
+
+        text = ""
+
+        for center, details in data.items():
+            if center == "center_data":
+                for data in details:
+                    text += "Center ID: {0}\n".format(data["center_id"])
+                    text += "Name of center;{0}\n".format(data["name"])
+                    text += "Address: {0}\n".format(data["address"])
+                    text += "Minimum age limit: {0}\n".format(data["min_age_limit"])
+                    text += "Next available day: {0}\n".format(data["next_available_day"])
+                    text += "Available capacity: {0}\n".format(data["available_capacity"])
+                    text += "Available dose 1 capacity: {0}\n".format(data["available_capacity_dose1"])
+                    text += "Available dose 2 capacity: {0}\n".format(data["available_capacity_dose2"])
+                    text += "Vaccine name: {0}\n".format(data["vaccine_name"])
+                    text += "Directions: https://www.google.com/maps/search/{0}\n".format(str(data["name"]).replace(" ", "+"))
+
+                    dispatcher.utter_message(text=text)
+                    text = ""
+
+        return []
+
+
 class ActionCovidNews(Action):
 
     def name(self) -> Text:
@@ -68,24 +108,24 @@ class ActionCovidData(Action):
         if current_place is not None:
             for state, cases in data.items():
                 if state == current_place:
-                    text += ("Cases in {0}: \n").format(state)
+                    text += "Cases in {0}: \n".format(state)
                     if "confirmed" in cases["delta7"].keys():
                         text += "Confirmed Cases for last 7 days: "
                         text += (str(cases["delta7"]["confirmed"]) + "\n")
                     if "deceased" in cases["delta7"].keys():
-                        text += "Deceased for last 7 days:"
+                        text += "Deceased for last 7 days: "
                         text += (str(cases["delta7"]["deceased"]) + "\n")
                     if "recovered" in cases["delta7"].keys():
-                        text += ("Recovered for last 7 days:")
+                        text += "Recovered for last 7 days: "
                         text += (str(cases["delta7"]["recovered"]) + "\n")
                     if "tested" in cases["delta7"].keys():
-                        text += ("Tested for last 7 days:")
+                        text += "Tested for last 7 days: "
                         text += (str(cases["delta7"]["tested"]) + "\n")
                     if "vaccinated1" in cases["delta7"].keys():
-                        text += ("Vaccinated with one dose for last 7 days:")
+                        text += "Vaccinated with one dose for last 7 days: "
                         text += (str(cases["delta7"]["vaccinated1"]) + "\n")
                     if "vaccinated2" in cases["delta7"].keys():
-                        text += ("Vaccinated with two doses for last 7 days:")
+                        text += "Vaccinated with two doses for last 7 days: "
                         text += (str(cases["delta7"]["vaccinated2"]) + "\n")
 
                     dispatcher.utter_message(text=text)
@@ -95,8 +135,7 @@ class ActionCovidData(Action):
                     pass
 
         else:
-            #dispatcher.utter_message(text="Invalid state code! Please enter a valid state code")
-            dispatcher.utter_message(text=current_place)
+            dispatcher.utter_message(text="Invalid state code! Please enter a valid state code")
             return []
 
         return []
