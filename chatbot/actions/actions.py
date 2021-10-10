@@ -40,19 +40,18 @@ class ActionCovidCenters(Action):
         for center, details in data.items():
             if center == "center_data":
                 for data in details:
-                    text += "Center ID: {0}<br />".format(data["center_id"])
-                    text += "Name of center: {0}<br />".format(data["name"])
-                    text += "Address: {0}<br />".format(data["address"])
-                    text += "Minimum age limit: {0}<br />".format(data["min_age_limit"])
-                    text += "Next available day: {0}<br />".format(data["next_available_day"])
-                    text += "Available capacity: {0}<br />".format(data["available_capacity"])
-                    text += "Available dose 1 capacity: {0}<br />".format(data["available_capacity_dose1"])
-                    text += "Available dose 2 capacity: {0}<br />".format(data["available_capacity_dose2"])
-                    text += "Vaccine name: {0}<br />".format(data["vaccine_name"])
-                    text += "Directions: https://www.google.com/maps/search/{0}<br />".format(str(data["name"]).replace(" ", "+"))
+                    dispatcher.utter_message("Center ID: {0}".format(data["center_id"]))
+                    dispatcher.utter_message("Name of center: {0}".format(data["name"]))
+                    dispatcher.utter_message("Address: {0}".format(data["address"]))
+                    dispatcher.utter_message("Minimum age limit: {0}<br />".format(data["min_age_limit"]))
+                    dispatcher.utter_message("Next available day: {0}<br />".format(data["next_available_day"]))
+                    dispatcher.utter_message("Available capacity: {0}<br />".format(data["available_capacity"]))
+                    dispatcher.utter_message("Available dose 1 capacity: {0}<br />".format(data["available_capacity_dose1"]))
+                    dispatcher.utter_message("Available dose 2 capacity: {0}<br />".format(data["available_capacity_dose2"]))
+                    dispatcher.utter_message("Vaccine name: {0}<br />".format(data["vaccine_name"]))
+                    dispatcher.utter_message("Directions: https://www.google.com/maps/search/{0}<br />".format(str(data["name"]).replace(" ", "+")))
 
-                    dispatcher.utter_message(text=text)
-                    text = ""
+                    return []
             # else:
             #     dispatcher.utter_message(text="Could not retrieve data")
             #     return []
@@ -79,18 +78,13 @@ class ActionCovidNews(Action):
         i = 0
 
         for article in articles:
-            text += "{0}<br />".format(article["title"])
-            text += "{0}<br />".format(article['description'])
-            text += "{0}<br />".format("- By {0}".format(article["author"]))
-            text += "{0}<br />".format("Refer to the full article here: {0}".format(article['url']))
+            dispatcher.utter_message("{0}<br />".format(article["title"]))
+            dispatcher.utter_message("{0}<br />".format(article['description']))
+            dispatcher.utter_message("{0}<br />".format("Refer to the full article here: {0}".format(article['url'])))
 
             dispatcher.utter_message(text=text)
 
-            text = ""
-            i+=1
-
-            if i == 3:
-                return []
+            return []
 
         return []
 
@@ -118,25 +112,36 @@ class ActionCovidData(Action):
                 if state == current_place:
                     text += "Cases in {0}: <br />".format(state)
                     if "confirmed" in cases["delta7"].keys():
+                        text = ""
                         text += "Confirmed Cases for last 7 days: "
                         text += (str(cases["delta7"]["confirmed"]) + "<br />")
+                        dispatcher.utter_message(text)
                     if "deceased" in cases["delta7"].keys():
+                        text = ""
                         text += "Deceased for last 7 days: "
                         text += (str(cases["delta7"]["deceased"]) + "<br />")
+                        dispatcher.utter_message(text)
                     if "recovered" in cases["delta7"].keys():
+                        text = ""
                         text += "Recovered for last 7 days: "
                         text += (str(cases["delta7"]["recovered"]) + "<br />")
+                        dispatcher.utter_message(text)
                     if "tested" in cases["delta7"].keys():
+                        text = ""
                         text += "Tested for last 7 days: "
                         text += (str(cases["delta7"]["tested"]) + "<br />")
+                        dispatcher.utter_message(text)
                     if "vaccinated1" in cases["delta7"].keys():
+                        text = ""
                         text += "Vaccinated with one dose for last 7 days: "
                         text += (str(cases["delta7"]["vaccinated1"]) + "<br />")
+                        dispatcher.utter_message(text)
                     if "vaccinated2" in cases["delta7"].keys():
+                        text = ""
                         text += "Vaccinated with two doses for last 7 days: "
                         text += (str(cases["delta7"]["vaccinated2"]) + "<br />")
+                        dispatcher.utter_message(text)
 
-                    dispatcher.utter_message(text=text)
                     return []
 
                 else:
