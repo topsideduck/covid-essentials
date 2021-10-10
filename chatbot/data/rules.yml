@@ -62,12 +62,12 @@ rules:
   - intent: mitigation
   - action: utter_mitigation
 
-- rule: masks
+- rule: covid_data
   steps:
-  - intent: masks
-  - action: action_show_masks
+  - intent: covid_data
+  - action: action_covid_data
 
-- rule: sanitizers
+- rule: covid_news
   steps:
-  - intent: sanitizers
-  - action: action_show_sanitizers
+  - intent: covid_news
+  - action: action_covid_news

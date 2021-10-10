@@ -5,45 +5,27 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- basics:
-    use_entities: true
-- spread:
-    use_entities: true
-- prevention:
-    use_entities: true
-- infected:
-    use_entities: true
-- recommendations:
-    use_entities: true
-- children:
-    use_entities: true
-- mis:
-    use_entities: true
-- symptoms:
-    use_entities: true
-- contact_tracing:
-    use_entities: true
-- mitigation:
-    use_entities: true
-- masks:
-    use_entities: true
-- sanitizers:
-    use_entities: true
-entities: []
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- basics
+- spread
+- prevention
+- infected
+- recommendations
+- children
+- mis
+- symptoms
+- contact_tracing
+- mitigation
+- covid_data
+- covid_news
+entities:
+  - place
 slots: {}
 responses:
   utter_greet:
@@ -97,7 +79,7 @@ actions:
   - utter_symptoms
   - utter_contact_tracing
   - utter_mitigation
-  - action_show_masks
-  - action_show_sanitizers
+  - action_covid_data
+  - action_covid_news
 forms: {}
 e2e_actions: []

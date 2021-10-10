@@ -149,26 +149,61 @@ nlu:
     - what is community mitigation?
     - community mitigation?
 
-- intent: masks
+- intent: covid_data
   examples: |
-    - get me good mask deals
-    - good mask deals
-    - masks
-    - face masks
-    - get me good face mask deals
-    - i need face masks
-    - i need mask
-    - i want face mask
-    - i want mask
+    - whats the covid data in [KA](place)
+    - whats the covid data in [AP](place)
+    - whats the covid data in [UP](place)
+    - covid data in [BR](place)
+    - get me covid data in [DN](place)
+- lookup: place
+  examples: |
+    - AN
+    - AP
+    - AR
+    - AS
+    - BR
+    - CH
+    - CT
+    - DL
+    - DN
+    - GA
+    - GJ
+    - HP
+    - HR
+    - JH
+    - JK
+    - KA
+    - KL
+    - LA
+    - LD
+    - MH
+    - ML
+    - MN
+    - MP
+    - MZ
+    - NL
+    - OR
+    - PB
+    - PY
+    - RJ
+    - SK
+    - TG
+    - TN
+    - TR
+    - TT
+    - UP
+    - UT
+    - WB
 
-- intent: sanitizers
+- intent: covid_news
   examples: |
-    - get me good sanitizer deals
-    - good sanitizer deals
-    - sanitizers
-    - hand sanitizers
-    - get me good hand sanitizers deals
-    - i need hand sanitizers
-    - i need sanitizer
-    - i want hand sanitizers
-    - i want sanitizer
+    - get me covid related news
+    - news related to covid
+    - covid news
+    - coronavirus news
+    - news of corona
+    - corona news
+    - india corona news
+    - covid news
+    - news covid-19
