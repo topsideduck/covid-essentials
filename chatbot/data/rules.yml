@@ -2,6 +2,16 @@ version: "2.0"
 
 rules:
 
+- rule: welcome
+  steps:
+  - intent: welcome
+  - action: utter_welcome
+
+- rule: help
+  steps:
+  - intent: help
+  - action: utter_help
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye

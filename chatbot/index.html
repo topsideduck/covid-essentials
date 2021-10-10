@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>!(function () {
+        let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+                initPayload: '/welcome',
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                title: 'Rasa the COVID chatbot',
+                subtitle: 'Built by school students, powered by AI'
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+        })();
+        </script>
+    </body>
+</html>

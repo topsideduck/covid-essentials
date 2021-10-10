@@ -5,6 +5,8 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- welcome
+- help
 - greet
 - goodbye
 - affirm
@@ -33,6 +35,10 @@ entities:
   - pincode
 slots: {}
 responses:
+  utter_welcome:
+  - text: Welcome! I am Rasa, the covid chatbot that answers to all your needs! Type 'help' to get started.
+  utter_help:
+  - text: You can get basic information regarding COVID-19, you can find information on vaccination centres near you, you can find the most important news articles on COVID-19, and most importantly, you can get COVID-19 data of each state in India, which is dynamically updated.
   utter_greet:
   - text: Hey! How are you?
   utter_cheer_up:
@@ -53,9 +59,9 @@ responses:
   utter_prevention:
   - text: Get Vaccinated, wear a mask, stay 6 feet away from others, avoid crowds and poorly ventilated spaces, wash your hands often, cover coughs and sneezes, clean and disinfect and monitor your health daily.
   utter_infected:
-  - text: People who have been in close contact with someone who has COVID-19—excluding people who have had COVID-19 within the past 3 months or who are fully vaccinated:\n\ - People who have tested positive for COVID-19 within the past 3 months and recovered do not have to quarantine or get tested again as long as they do not develop new symptoms.\n\ - People who develop symptoms again within 3 months of their first bout of COVID-19 may need to be tested again if there is no other cause identified for their symptoms.\n\ - People who have been in close contact with someone who has COVID-19 are not required to quarantine if they have been fully vaccinated against the disease and show no symptoms.
+  - text: People who have been in close contact with someone who has COVID-19—excluding people who have had COVID-19 within the past 3 months or who are fully vaccinated:-<br /> People who have tested positive for COVID-19 within the past 3 months and recovered do not have to quarantine or get tested again as long as they do not develop new symptoms.<br /> - People who develop symptoms again within 3 months of their first bout of COVID-19 may need to be tested again if there is no other cause identified for their symptoms.<br /> - People who have been in close contact with someone who has COVID-19 are not required to quarantine if they have been fully vaccinated against the disease and show no symptoms.
   utter_recommendations:
-  - text: If you are sick with COVID-19 or think you might have COVID-19, follow the steps below to care for yourself and to help protect other people in your home and community:\n\ - Stay at home (except to get medical care).\n\ - Separate yourself from others.\n\ - Monitor your symptoms.\n\ - Wear a mask over your nose and mouth when around others.\n\ - Cover your coughs and sneezes.\n\ - Wash your hands often.\n\ - Clean high-touch surfaces every day.\n\ - Avoid sharing personal household items.
+  - text: If you are sick with COVID-19 or think you might have COVID-19, follow the steps below to care for yourself and to help protect other people in your home and community:-<br /> - Stay at home (except to get medical care).<br /> - Separate yourself from others.<br /> - Monitor your symptoms.<br /> - Wear a mask over your nose and mouth when around others.<br /> - Cover your coughs and sneezes.<br /> - Wash your hands often.<br /> - Clean high-touch surfaces every day.<br /> - Avoid sharing personal household items.
   utter_children:
   - text: Children can be infected with the virus that causes COVID-19 and can get sick with COVID-19. Most children with COVID-19 have mild symptoms or they may have no symptoms at all (“asymptomatic”). Fewer children have been sick with COVID-19 compared to adults. Babies younger than 1 and children with certain underlying medical conditions may be more likely to have serious illness from COVID-19.
   utter_mis:
@@ -63,7 +69,7 @@ responses:
   utter_symptoms:
   - text: People with COVID-19 have reported a wide range of symptoms – from mild symptoms to severe illness. Symptoms may appear 2-14 days after exposure to the virus. If you have fever, cough, or similar symptoms, you might have COVID-19.
   utter_contact_tracing:
-  - text: Contact tracing has been used for decades by state and local health departments to slow or stop the spread of infectious diseases. Contact tracing slows the spread of COVID-19 by:\n\ - Letting people know they may have been exposed to COVID-19 and should monitor their health for signs and symptoms of COVID-19.\n\ - Helping people who may have been exposed to COVID-19 get tested.\n\ - Asking people to self-isolate if they have COVID-19 or self-quarantine if they are a close contact of someone with COVID-19.
+  - text: Contact tracing has been used for decades by state and local health departments to slow or stop the spread of infectious diseases. Contact tracing slows the spread of COVID-19 by:-<br /> - Letting people know they may have been exposed to COVID-19 and should monitor their health for signs and symptoms of COVID-19.<br /> - Helping people who may have been exposed to COVID-19 get tested.<br /> - Asking people to self-isolate if they have COVID-19 or self-quarantine if they are a close contact of someone with COVID-19.
   utter_mitigation:
   - text: Community mitigation is a set of actions that people and communities can take to slow the spread of infectious diseases like COVID-19. The goal of community mitigation in areas with local COVID-19 transmission is to slow its spread and to protect all individuals, especially those at increased risk for severe illness, while minimizing the negative impacts of these strategies.
   utter_masks_bad:
@@ -74,6 +80,8 @@ responses:
   - text: Antibiotics do not work against viruses; they only work on bacterial infections. COVID-19 is caused by a virus, so antibiotics do not work. Antibiotics should not be used as a means of prevention or treatment of COVID-19. In hospitals, physicians will sometimes use antibiotics to prevent or treat secondary bacterial infections which can be a complication of COVID-19 in severely ill patients. They should only be used as directed by a physician to treat a bacterial infection.
 
 actions:
+  - utter_welcome
+  - utter_help
   - utter_greet
   - utter_cheer_up
   - utter_did_that_help

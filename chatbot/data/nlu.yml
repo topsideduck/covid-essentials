@@ -1,6 +1,17 @@
 version: "2.0"
 
 nlu:
+
+- intent: welcome
+
+- intent: help
+  examples: |
+    - help
+    - help me
+    - hElP
+    - HELP
+    - help us
+
 - intent: greet
   examples: |
     - hey
