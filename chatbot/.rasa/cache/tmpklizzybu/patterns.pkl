@@ -1,0 +1,10 @@
+[
+  {
+    "name": "place",
+    "pattern": "(\\bAN\\b|\\bAP\\b|\\bAR\\b|\\bAS\\b|\\bBR\\b|\\bCH\\b|\\bCT\\b|\\bDL\\b|\\bDN\\b|\\bGA\\b|\\bGJ\\b|\\bHP\\b|\\bHR\\b|\\bJH\\b|\\bJK\\b|\\bKA\\b|\\bKL\\b|\\bLA\\b|\\bLD\\b|\\bMH\\b|\\bML\\b|\\bMN\\b|\\bMP\\b|\\bMZ\\b|\\bNL\\b|\\bOR\\b|\\bPB\\b|\\bPY\\b|\\bRJ\\b|\\bSK\\b|\\bTG\\b|\\bTN\\b|\\bTR\\b|\\bTT\\b|\\bUP\\b|\\bUT\\b|\\bWB\\b)"
+  },
+  {
+    "name": "pincode",
+    "pattern": "(\\b110001\\b|\\b230003\\b|\\b330064\\b|\\b460093\\b|\\b560075\\b|\\b660019\\b|\\b700004\\b|\\b899002\\b|\\b950045\\b)"
+  }
+]
