@@ -1,2 +1,2 @@
-requests~=2.25.1
-rasa~=2.8.9
+requests
+rasa
